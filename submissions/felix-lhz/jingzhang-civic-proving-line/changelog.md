@@ -156,3 +156,10 @@
 - Reflowed the Ring, Gate and assembly notes so the English key-area evidence remains inside its drawing frames.
 - Rebuilt the mobility fallback as a dedicated bounded card and reserved a fixed A0 header zone for page codes.
 - Added browser-based SVG text-bound, fallback-card containment and A0 header-collision checks without changing spatial content, metrics, geometry or publication version.
+
+## 2026-09-01 · V17.3
+
+- Added an S7 participant-side pre-feasibility decision package: capacity, staffing/FTE, seven cost classes, three ROM sensitivities, ten dependencies, twelve acceptance indicators, maintenance cycles and restoration reserve.
+- Kept survey, permits, verified quotes, named operator, professional sign-off, site authorisation and field results at zero/HOLD.
+- Registered current Beijing cost-basis and urban-renewal implementation sources without presenting a formal estimate or quote.
+- Concentrated publication changes on the implementation evidence entry while preserving the recognised spatial mechanism.

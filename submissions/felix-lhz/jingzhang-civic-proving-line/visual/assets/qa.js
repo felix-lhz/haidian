@@ -14,7 +14,9 @@ const ok=(v,m)=>{if(!v)throw new Error(m)};
 const model=json('visual/assets/prototype-model.json');
 const atlas=json('visual/assets/spatial-atlas.json');
 const data=json('visual/assets/two-answers.json');
-for(const [name,item] of [['prototype',model],['atlas',atlas],['scenes',data]])ok(item.schema_version==='1.14.0',`${name} schema must be 1.14.0`);
+const ready=json('visual/assets/e2-readiness.json');
+const metricBook=json('metrics.json').metrics;
+for(const [name,item] of [['prototype',model],['atlas',atlas],['scenes',data],['readiness',ready]])ok(item.schema_version==='1.15.0',`${name} schema must be 1.15.0`);
 ok(model.field_status==='not_field_run','Prototype must remain not_field_run');
 ok(model.architectural_prototypes.length===3,'Three prototypes required');
 ok(new Set(model.architectural_prototypes.map(x=>x.spatial_archetype)).size===3,'Ring, Gate and Porch must be distinct');
@@ -22,7 +24,7 @@ ok(model.material_palette.length===5,'Five reversible materials required');
 ok(model.public_route_invariant.clear_width_m===4&&!model.public_route_invariant.interruption_allowed,'4 m public route invariant required');
 ok(model.public_route_invariant.states.join('|')==='OPEN|TRIAL|PAUSE|RETIRE','Four canonical states required');
 ok(Object.keys(model.canonical_view_refs).length===5,'Five canonical jury views required');
-ok(model.implementation_stage==='G0_survey_and_permit_preparation','Current stage must be G0 preparation');
+ok(model.implementation_stage==='G0_participant_prefeasibility_documented_external_holds','Current stage must be participant pre-feasibility with external holds');
 ok(model.next_gate_requirements.length===5,'Five next-gate requirements required');
 for(const p of model.architectural_prototypes){
   for(const key of ['canonical_view_refs','context_feature_refs','existing_public_use_refs','state_geometry_refs','maintenance_route_refs','experience_camera_ref','visual_priority','implementation_stage','next_gate_requirements'])ok(p[key]&&(Array.isArray(p[key])?p[key].length:true),`${p.id} missing ${key}`);
@@ -35,6 +37,30 @@ ok(model.s7.fire_route.independent_of_trial,'Fire route must be independent');
 ok(model.s7.retirement_route.independent_of_public_cross,'Retirement route must be independent');
 ok(model.current_gate.closed_permit_count===0&&model.current_gate.required_permit_count===8,'Truthful 0/8 permit state required');
 ok(model.current_gate.baseline_days_recorded===0&&model.current_gate.required_baseline_days===7,'Truthful 0/7 baseline required');
+ok(model.current_gate.decision==='participant_prefeasibility_documented_external_holds','Prototype gate decision must distinguish participant readiness from external HOLDs');
+ok(ready.capacity_egress_envelope.concurrent_design_cap_person===12,'12-person participant design cap required');
+ok(ready.capacity_egress_envelope.formula==='48 sqm / 4 sqm_per_person = 12 persons','Capacity formula must remain explicit');
+ok(ready.capacity_egress_envelope.statutory_egress_conclusion===false,'Geometry distance must not become a statutory egress claim');
+ok(ready.staffing_scenarios.length===4,'Four accountable staffing scenarios required');
+const fte=ready.staffing_scenarios.reduce((n,r)=>n+r.fte_equivalent,0);
+ok(Math.abs(fte-2.28)<1e-9&&ready.fte_formula.participant_side_total_fte_equivalent===2.28,'2.28 FTE formula mismatch');
+ok(ready.fte_formula.vendor_technician_substitution_allowed===false,'Vendor support cannot replace accountable roles');
+ok(ready.cost_classes.length===7,'Seven cost classes required');
+ok(ready.rom_scenarios.scenarios.length===3&&ready.rom_scenarios.scenarios.map(x=>x.rate_input_multiplier).join('|')==='0.8|1|1.2','Three ROM sensitivities required');
+ok(ready.rom_scenarios.scenarios.every(x=>x.total_cny===null&&x.status==='pending_complete_rate_inputs'),'ROM totals must remain blank until rate inputs are complete');
+ok(ready.restoration_reserve.rate===0.12&&ready.restoration_reserve.amount_cny===null,'12% restoration-reserve formula must remain unpriced');
+ok(ready.critical_dependencies.length===10,'Ten critical dependencies required');
+ok(ready.acceptance_register.length===12,'Twelve acceptance indicators required');
+ok(ready.acceptance_register.filter(x=>x.evidence_tier==='design_time_judgeable').length===8,'Eight design-time acceptance indicators required');
+ok(ready.acceptance_register.filter(x=>x.evidence_tier==='field_dependent').length===4,'Four field-dependent acceptance indicators required');
+ok(ready.acceptance_register.filter(x=>x.evidence_tier==='field_dependent').every(x=>x.result===null&&x.field_status==='not_field_run'),'Field-dependent acceptance must remain null/not_field_run');
+ok(ready.maintenance_cycles.length===4,'Four maintenance cycles required');
+for(const [key,value] of Object.entries(ready.external_evidence_status))if(key.endsWith('_count'))ok(value===0,`${key} must remain zero`);
+ok(ready.external_evidence_status.overall_status==='HOLD','External evidence must remain HOLD');
+ok(ready.alternative_delivery_comparison.map(x=>x.decision).join('|')==='reject_design|revise_design|advance_design','Alternative delivery decisions must remain reject/revise/advance');
+for(const id of ['s7_design_occupancy_cap_person','s7_staffing_fte_equivalent','s7_cost_class_count','s7_rom_sensitivity_scenario_count','s7_critical_dependency_count','s7_acceptance_indicator_count','s7_immediately_judgeable_acceptance_count','s7_field_dependent_acceptance_count','s7_maintenance_cycle_count','s7_restoration_reserve_template_count','verified_quote_count','named_operator_count','professional_signoff_count','external_release_count','authorised_site_action_count'])ok(metricBook[id],`Missing metric ${id}`);
+ok(metricBook.s7_design_occupancy_cap_person.value===12&&metricBook.s7_staffing_fte_equivalent.value===2.28,'Capacity/FTE metrics mismatch');
+for(const id of ['verified_quote_count','named_operator_count','professional_signoff_count','external_release_count','authorised_site_action_count'])ok(metricBook[id].value===0,`${id} must remain zero`);
 
 ok(atlas.official_context_update.official_context_update.planning_area_ha===1668.2,'Official 1668.2 ha context required');
 ok(atlas.official_context_update.official_context_update.green_belt_length_km===9,'Official 9 km context required');
@@ -65,8 +91,8 @@ for(const rel of ['visual/index.html','visual/index.en.html']){
 }
 for(const rel of ['report/proposal.html','report/proposal.en.html']){
   const html=text(rel);
-  ok((html.match(/V172_REPORT_START/g)||[]).length===1,`${rel} must contain one V17.2 report entry`);
-  const firstScreen=html.split('V172_REPORT_END')[0];
+  ok((html.match(/V173_REPORT_START/g)||[]).length===1,`${rel} must contain one V17.3 report entry`);
+  const firstScreen=html.split('V173_REPORT_END')[0];
   ok(!firstScreen.includes('v16-report')&&!firstScreen.includes('G0 NO-GO'),`${rel} contains legacy first screen`);
   ok(html.includes('.v172-report~main>.hero:first-child,.v172-report~main>.hero:first-child+h1{display:none!important}'),`${rel} must replace, not duplicate, the original hero`);
 }
@@ -118,11 +144,11 @@ for(const id of ['BEIJING-BLOCK-PLAN-APPROVED-20260812','BEIJING-JZ-PHASE2-COMPL
 }
 const buildCode=text('visual/assets/build.js')+text('visual/assets/content.js')+text('visual/assets/build-html.js');
 ok(!/Legacy|V1[1-6]_REPORT|function\s+\w+V1[1-6]/.test(buildCode),'Canonical build contains legacy override code');
-ok(buildCode.includes("const VERSION='V17.2'"),'V17.2 publication token is required');
+ok(buildCode.includes("const VERSION='V17.3'"),'V17.3 publication token is required');
 ok(buildCode.includes('title:44')&&buildCode.includes('note:18'),'Shared publication type tokens are required');
 ok(!fs.existsSync(path.join(ROOT,'visual/assets/app.js'))&&!fs.existsSync(path.join(ROOT,'visual/assets/styles.css')),'Unused app/styles assets should be removed');
 const listed=new Set(json('manifest.json').files.map(x=>x.path));
-for(const rel of ['visual/assets/prototype-model.json','visual/assets/content.js','visual/assets/build.js','visual/assets/build-html.js','visual/assets/build-font.js','visual/assets/font-render-qa.js','visual/assets/qa.js','visual/assets/font-bundle.json','visual/assets/font-metadata.json','visual/assets/font-glyphs.json','visual/assets/font-license.json','assets/figures/jury-summary.png','assets/media/receipt-porch-v17-day.webp','assets/media/receipt-porch-v17-night.webp'])ok(listed.has(rel),`Manifest missing ${rel}`);
+for(const rel of ['visual/assets/prototype-model.json','visual/assets/e2-readiness.json','visual/assets/content.js','visual/assets/build.js','visual/assets/build-html.js','visual/assets/build-font.js','visual/assets/font-render-qa.js','visual/assets/qa.js','visual/assets/font-bundle.json','visual/assets/font-metadata.json','visual/assets/font-glyphs.json','visual/assets/font-license.json','assets/figures/jury-summary.png','assets/media/receipt-porch-v17-day.webp','assets/media/receipt-porch-v17-night.webp'])ok(listed.has(rel),`Manifest missing ${rel}`);
 
 async function inspectSvgGeometry(page,markup,label,style=''){
   await page.setContent(`<html><meta charset="utf-8"><style>html,body{margin:0}${style}</style><body>${markup}</body></html>`,{waitUntil:'load'});
@@ -167,4 +193,4 @@ async function runVisualGeometryQa(){
   }finally{await browser.close();}
 }
 
-runVisualGeometryQa().then(()=>console.log(JSON.stringify({ok:true,schema:'1.14.0',prototypes:3,materials:5,scenarios:12,public_route_width_m:4,states:4,current_stage:'G0_survey_and_permit_preparation',permits:'0/8',baseline:'0/7',core_unique:true,offline:true,visual_geometry:true,font_family:fontMeta.family,font_bytes:fontBinary.length,package_bytes:total},null,2))).catch(e=>{console.error(e);process.exit(1)});
+runVisualGeometryQa().then(()=>console.log(JSON.stringify({ok:true,schema:'1.15.0',prototypes:3,materials:5,scenarios:12,public_route_width_m:4,states:4,current_stage:'G0_participant_prefeasibility_documented_external_holds',occupancy_cap_person:12,staffing_fte_equivalent:2.28,cost_classes:7,rom_scenarios:3,critical_dependencies:10,acceptance:'8 design + 4 field',permits:'0/8',quotes:0,baseline:'0/7',core_unique:true,offline:true,visual_geometry:true,font_family:fontMeta.family,font_bytes:fontBinary.length,package_bytes:total},null,2))).catch(e=>{console.error(e);process.exit(1)});

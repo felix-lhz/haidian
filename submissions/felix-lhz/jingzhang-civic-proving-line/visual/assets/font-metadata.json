@@ -9,9 +9,9 @@
     "sha256": "7087698d52240614659957608d8c4ad446759aee3208409dc9f566412e7af8f4"
   },
   "subset": {
-    "sha256": "8c9bbd418da74b5ec81ae96ab7d5890b6dc6799fb508ba2f68f20b777fd6d335",
-    "bytes": 271436,
-    "glyph_count": 975,
+    "sha256": "f71b386e93528cdf6c6e64da72e54c5e51fd773508802af3adccc216b0ce45f7",
+    "bytes": 274232,
+    "glyph_count": 984,
     "generator": "visual/assets/build-font.js"
   },
   "reserved_font_name_handling": "The derived family is renamed JZ Civic CJK; no Source reserved font name is used for the subset family.",
