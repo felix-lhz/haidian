@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.14.0",
-  "dataset_id": "jingzhang-v17-2-one-route-four-states",
+  "schema_version": "1.15.0",
+  "dataset_id": "jingzhang-v17-3-prefeasibility-decision-package",
   "field_status": "not_field_run",
   "coordinate_basis": {
     "unit": "m",
@@ -241,7 +241,7 @@
       ],
       "experience_camera_ref": "CAM-S7-NW-01",
       "visual_priority": "hero",
-      "implementation_stage": "G0_survey_and_permit_preparation",
+      "implementation_stage": "G0_participant_prefeasibility_documented_external_holds",
       "next_gate_requirements": [
         "survey_complete",
         "title_and_interface_verified",
@@ -393,8 +393,8 @@
     "visual_priority": "hero"
   },
   "current_gate": {
-    "gate_id": "G0-S7-PRETRIAL",
-    "decision": "no_go",
+    "gate_id": "G0-S7-PREFEASIBILITY",
+    "decision": "participant_prefeasibility_documented_external_holds",
     "closed_permit_count": 0,
     "required_permit_count": 8,
     "baseline_days_recorded": 0,
@@ -402,8 +402,8 @@
     "contracted_independent_role_count": 0,
     "required_independent_role_count": 4,
     "public_message": {
-      "zh": "建筑与场地原型已记录；测绘、权属、八类许可、独立岗位和七日普通基线未齐，禁止进入试验。",
-      "en": "The architectural and ground prototype is documented. Survey, title, eight permits, independent duty posts and a seven-day baseline are incomplete; trial is prohibited."
+      "zh": "参与者侧容量、人员、成本结构、依赖和验收已记录；测绘、权属、八类许可、具名岗位、正式报价和七日普通基线未齐，AI试验保持HOLD。",
+      "en": "Participant-side capacity, staffing, cost structure, dependencies and acceptance are documented. Survey, title, eight permits, named posts, verified quotes and a seven-day baseline are incomplete; AI trial remains on HOLD."
     }
   },
   "context_diagnostics": {
@@ -441,7 +441,7 @@
     ],
     "interruption_allowed": false
   },
-  "implementation_stage": "G0_survey_and_permit_preparation",
+  "implementation_stage": "G0_participant_prefeasibility_documented_external_holds",
   "next_gate_requirements": [
     "survey_complete",
     "title_and_interface_verified",

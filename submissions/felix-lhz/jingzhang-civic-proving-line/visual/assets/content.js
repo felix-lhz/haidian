@@ -29,9 +29,21 @@ ALT-C 的概念公共路线、单侧试验范围和可逆缓冲均由同一局�
 
 岗位—急停距离沿用同一输入；正式底图、站口、权属或专业条件变化时必须重算，图纸和文字服从结果。[metric:alt_c_max_estop_staff_distance_m]
 
-## 当前实施门：G0 进入测绘与许可准备
+## 当前实施门：G0 参与者预可行性已记录，外部条件保持 HOLD
 
-当前不是“不可实施”，而是诚实位于 **G0：进入测绘与许可准备**。下一道门要求完成现场测绘、权属和轨道接口核验，关闭场地/消防/无障碍/临电/网络/交通组织/设备安全等许可依赖，落实场地负责人、普通服务、安全和数据记录四个独立岗位，再记录连续 7 个普通运行日。任一条件缺失，AI 试验不启动，但普通开放日仍可独立筹备。[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
+当前不是“不可实施”，而是诚实位于 **G0：参与者侧预可行性已记录，外部条件保持 HOLD**。下一道门仍要求完成现场测绘、权属和轨道接口核验，关闭场地/消防/无障碍/临电/网络/交通组织/设备安全等许可依赖，落实四个独立责任岗位，再记录连续 7 个普通运行日。任一条件缺失，AI 试验不启动，但普通开放日仍可独立筹备。[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
+
+### S7 预可行性裁定包
+
+参与者侧现可复核：48㎡回执廊按 4㎡/人舒适容量假设形成 **12 人同时使用设计上限**；普通服务、场地、安全与数据岗位合计 **2.28 FTE-equivalent**；成本分为 7 类。[metric:s7_design_occupancy_cap_person] [metric:s7_staffing_fte_equivalent] [metric:s7_cost_class_count]
+
+成本另设低/基准/高 3 种费率敏感性，但正式总价保持空值；10 项关键依赖必须顺序闭合。[metric:s7_rom_sensitivity_scenario_count] [metric:s7_critical_dependency_count]
+
+十二项验收中，8 项可由当前几何、数量和责任接口判断，4 项必须通过现场普通基线与试验取得。[metric:s7_acceptance_indicator_count] [metric:s7_immediately_judgeable_acceptance_count] [metric:s7_field_dependent_acceptance_count]
+
+当前许可、报价、具名运营主体、专业签章和现场授权全部为 0；这组数字是诚实的外部 HOLD，不是方案空白。[metric:verified_quote_count] [metric:named_operator_count]
+
+ROM 方法引用北京市 2025 年建设工程计价依据执行规定、2026 年 8 月造价信息及城市更新实施方案指南。所有数量仍是投稿原型假设；无法映射到同口径官方信息的设备保持 pending_market_quote，不推定采购价。[source:BEIJING-COST-BASIS-2025-EXECUTION] [source:BEIJING-COST-INFO-202608] [source:BEIJING-URBAN-RENEWAL-GUIDE-202405]
 
 现场客流、安全、效率、满意度、能耗、价格和恢复时长继续为 unknown / not_field_run。12 份测量契约说明“如何验证”，不冒充验证结果。[metric:measurement_contract_count] [metric:field_verification_result_count]
 
@@ -68,9 +80,21 @@ ALT-C route, one-sided trial area and reversible buffer come from one local-metr
 
 Staff-to-e-stop distance uses the same input. Any change in official base, entrances, title or specialist constraints requires a rerun; drawings and text must follow the result.[metric:alt_c_max_estop_staff_distance_m]
 
-## Current implementation gate: G0 survey and permit preparation
+## Current implementation gate: participant pre-feasibility documented; external conditions on HOLD
 
-The scheme is not labelled “unimplementable”; it is honestly at **G0: enter survey and permit preparation**. The next gate requires site survey, title and rail-interface checks; closure of site, fire, accessibility, temporary power, network, traffic and equipment-safety dependencies; four independent venue, baseline-service, safety and data posts; then seven consecutive ordinary operating days. If any condition is missing, AI trial does not start, while an ordinary open day can still be prepared.[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
+The scheme is not labelled “unimplementable”; it is honestly at **G0: participant-side pre-feasibility documented, external conditions on HOLD**. The next gate still requires site survey, title and rail-interface checks; closure of site, fire, accessibility, temporary power, network, traffic and equipment-safety dependencies; four independent accountable posts; then seven consecutive ordinary operating days. If any condition is missing, AI trial does not start, while an ordinary open day can still be prepared.[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
+
+### S7 pre-feasibility decision package
+
+Participant-side decisions are now reviewable: the 48 sqm Receipt Porch uses a 4 sqm/person comfort assumption to set a **12-person concurrent design cap**; baseline service, venue, safety and data coverage total **2.28 FTE-equivalent**; cost planning uses seven classes.[metric:s7_design_occupancy_cap_person] [metric:s7_staffing_fte_equivalent] [metric:s7_cost_class_count]
+
+Low/base/high rate sensitivities are defined while formal totals remain blank; ten critical dependencies must close in order.[metric:s7_rom_sensitivity_scenario_count] [metric:s7_critical_dependency_count]
+
+Of twelve acceptance indicators, eight are judgeable from present geometry, quantities and responsibility interfaces, while four require a field baseline and trial.[metric:s7_acceptance_indicator_count] [metric:s7_immediately_judgeable_acceptance_count] [metric:s7_field_dependent_acceptance_count]
+
+Permits, verified quotes, a named operator, professional sign-off and authorised site action remain zero. These are explicit external HOLDs, not concealed gaps.[metric:verified_quote_count] [metric:named_operator_count]
+
+The ROM method references Beijing's rule for the 2025 construction cost basis, August 2026 cost information and the urban-renewal implementation-plan guide. All quantities remain participant prototype assumptions; equipment without a scope-matched official line stays pending_market_quote.[source:BEIJING-COST-BASIS-2025-EXECUTION] [source:BEIJING-COST-INFO-202608] [source:BEIJING-URBAN-RENEWAL-GUIDE-202405]
 
 Field footfall, safety, efficiency, satisfaction, energy, price and recovery duration remain unknown / not_field_run. Twelve measurement contracts define how to verify; they are not results.[metric:measurement_contract_count] [metric:field_verification_result_count]
 
@@ -111,8 +135,8 @@ function rebuildProposal(rel, lang) {
 
 function updateStructuredData() {
   const model = readJson('visual/assets/prototype-model.json');
-  model.schema_version = '1.14.0';
-  model.dataset_id = 'jingzhang-v17-2-one-route-four-states';
+  model.schema_version = '1.15.0';
+  model.dataset_id = 'jingzhang-v17-3-prefeasibility-decision-package';
   model.core_claim = {zh:'大钟寺一条4米原型公共路径在四态中不断线；AI只占一侧，人工回执廊始终开放。',en:'A 4 m prototype public route remains unbroken across four states; AI occupies one side and the staffed Receipt Porch stays open.'};
   model.canonical_view_refs = {city_context:'FIG-SITE-OVERVIEW-V17',ground_interface:'FIG-LAND-USE-V17',landmark_family:'FIG-KEY-AREAS-V17',continuous_journey:'FIG-MOBILITY-V17',evidence_desk:'FIG-METRICS-V17'};
   model.context_feature_refs = ['approved_green_belt','innovation_axis','dazhongsi_centre','fishbone_slow_mobility'];
@@ -122,8 +146,16 @@ function updateStructuredData() {
   model.s7.maintenance_route_refs = ['S7-SERVICE-S','S7-RETIRE-E'];
   model.s7.experience_camera_ref = 'CAM-S7-NW-01';
   model.s7.visual_priority = 'hero';
-  model.implementation_stage = 'G0_survey_and_permit_preparation';
+  model.implementation_stage = 'G0_participant_prefeasibility_documented_external_holds';
   model.next_gate_requirements = ['survey_complete','title_and_interface_verified','permit_dependencies_closed','four_independent_posts','seven_ordinary_days'];
+  Object.assign(model.current_gate,{
+    gate_id:'G0-S7-PREFEASIBILITY',
+    decision:'participant_prefeasibility_documented_external_holds',
+    public_message:{
+      zh:'参与者侧容量、人员、成本结构、依赖和验收已记录；测绘、权属、八类许可、具名岗位、正式报价和七日普通基线未齐，AI试验保持HOLD。',
+      en:'Participant-side capacity, staffing, cost structure, dependencies and acceptance are documented. Survey, title, eight permits, named posts, verified quotes and a seven-day baseline are incomplete; AI trial remains on HOLD.'
+    }
+  });
   for (const p of model.architectural_prototypes) {
     p.canonical_view_refs = p.id === 'LMK-03' ? ['S7-PLAN-500','S7-SEC-AA-200','S7-AXON-CUTAWAY'] : p.plan_refs.concat(p.section_refs);
     p.context_feature_refs = p.id === 'LMK-03' ? ['dazhongsi_centre','approved_green_belt','rail_directional_interface'] : ['approved_green_belt'];
@@ -139,11 +171,11 @@ function updateStructuredData() {
   writeJson('visual/assets/prototype-model.json', model);
 
   const atlas = readJson('visual/assets/spatial-atlas.json');
-  Object.assign(atlas,{schema_version:'1.14.0',publication_version:'V17.2',subtitle:{zh:'一条公共路径，四种城市状态',en:'One public route, four civic states'},canonical_view_refs:model.canonical_view_refs,context_feature_refs:model.context_feature_refs,existing_public_use_refs:model.existing_public_use_refs,public_route_invariant:model.public_route_invariant,state_geometry_refs:model.s7.state_geometry_refs,maintenance_route_refs:model.s7.maintenance_route_refs,experience_camera_ref:model.s7.experience_camera_ref,visual_priority:'hero',implementation_stage:model.implementation_stage,next_gate_requirements:model.next_gate_requirements,interface_status:['existing_published','approved_context','design_proposal','unknown']});
+  Object.assign(atlas,{schema_version:'1.15.0',publication_version:'V17.3',subtitle:{zh:'一条公共路径，四种城市状态',en:'One public route, four civic states'},canonical_view_refs:model.canonical_view_refs,context_feature_refs:model.context_feature_refs,existing_public_use_refs:model.existing_public_use_refs,public_route_invariant:model.public_route_invariant,state_geometry_refs:model.s7.state_geometry_refs,maintenance_route_refs:model.s7.maintenance_route_refs,experience_camera_ref:model.s7.experience_camera_ref,visual_priority:'hero',implementation_stage:model.implementation_stage,next_gate_requirements:model.next_gate_requirements,interface_status:['existing_published','approved_context','design_proposal','unknown']});
   writeJson('visual/assets/spatial-atlas.json', atlas);
 
   const scenes = readJson('visual/assets/two-answers.json');
-  Object.assign(scenes,{schema_version:'1.14.0',publication_version:'V17.2',subtitle:{zh:'一条公共路径，四种城市状态',en:'One public route, four civic states'},public_route_invariant:model.public_route_invariant,canonical_view_refs:model.canonical_view_refs,context_feature_refs:model.context_feature_refs,existing_public_use_refs:model.existing_public_use_refs,state_geometry_refs:model.s7.state_geometry_refs,maintenance_route_refs:model.s7.maintenance_route_refs,experience_camera_ref:model.s7.experience_camera_ref,visual_priority:'hero',implementation_stage:model.implementation_stage,next_gate_requirements:model.next_gate_requirements});
+  Object.assign(scenes,{schema_version:'1.15.0',publication_version:'V17.3',subtitle:{zh:'一条公共路径，四种城市状态',en:'One public route, four civic states'},public_route_invariant:model.public_route_invariant,canonical_view_refs:model.canonical_view_refs,context_feature_refs:model.context_feature_refs,existing_public_use_refs:model.existing_public_use_refs,state_geometry_refs:model.s7.state_geometry_refs,maintenance_route_refs:model.s7.maintenance_route_refs,experience_camera_ref:model.s7.experience_camera_ref,visual_priority:'hero',implementation_stage:model.implementation_stage,next_gate_requirements:model.next_gate_requirements});
   for (const s of scenes.scenarios) {
     s.visual_priority = s.code === 'S7' ? 'hero' : (['T2','S2'].includes(s.code) ? 'support' : 'reference');
     s.implementation_stage = s.code === 'S7' ? model.implementation_stage : 'E1_concept_design';
@@ -153,16 +185,185 @@ function updateStructuredData() {
   writeJson('visual/assets/two-answers.json', scenes);
 }
 
+function updateReadiness() {
+  const ready = readJson('visual/assets/e2-readiness.json');
+  ready.schema_version = '1.15.0';
+  ready.dataset_id = 'jingzhang-v17-3-s7-participant-prefeasibility';
+  ready.title = {zh:'V17.3 S7 预可行性裁定包',en:'V17.3 S7 Pre-feasibility Decision Package'};
+  ready.definition = {
+    zh:'参与者侧容量、人员、成本结构、依赖、验收与恢复方法已记录；测绘、许可、报价、运营任命、专业签章、现场授权和绩效仍为外部HOLD。',
+    en:'Participant-side capacity, staffing, cost structure, dependencies, acceptance and recovery methods are documented; survey, permits, quotes, operator appointment, professional sign-off, site authorisation and performance remain external HOLDs.'
+  };
+  ready.prototype_readiness = 'G0_participant_prefeasibility_documented_external_holds';
+  ready.capacity_egress_envelope = {
+    status:'participant_design_assumption_pending_survey_and_professional_review',
+    evidence_porch_area_sqm:48,
+    comfort_area_per_person_sqm:4,
+    concurrent_design_cap_person:12,
+    formula:'48 sqm / 4 sqm_per_person = 12 persons',
+    public_routes_excluded_from_occupancy:true,
+    public_route_clear_width_m:4,
+    trial_bay_public_occupancy_allowed:false,
+    open_porch_dimensions_m:{width:8,depth:6},
+    max_geometry_distance_to_open_edge_m:5,
+    distance_formula:'sqrt(8^2 + 6^2) / 2 = 5 m',
+    statutory_egress_conclusion:false,
+    dependencies:['official_survey','fire_review','accessibility_review','operator_review']
+  };
+  ready.staffing_scenarios = [
+    {role:'baseline_service_post',weekly_hours:40,relief_factor:1.2,fte_equivalent:1.2,appointment_status:'unappointed'},
+    {role:'venue_lead',weekly_hours:12,relief_factor:1.2,fte_equivalent:0.36,appointment_status:'unappointed'},
+    {role:'safety_lead',weekly_hours:12,relief_factor:1.2,fte_equivalent:0.36,appointment_status:'unappointed'},
+    {role:'data_recorder',weekly_hours:12,relief_factor:1.2,fte_equivalent:0.36,appointment_status:'unappointed'}
+  ];
+  ready.fte_formula = {
+    standard_weekly_hours:40,
+    formula:'weekly_hours / 40 * relief_factor',
+    participant_side_total_fte_equivalent:2.28,
+    vendor_technician_substitution_allowed:false,
+    status:'participant_staffing_scenario_not_appointment_or_hiring_commitment'
+  };
+  ready.cost_basis = {
+    currency:'CNY',
+    price_basis_month:'2026-08',
+    method_status:'participant_rom_assumption_not_formal_estimate_or_quote',
+    sources:['BEIJING-COST-BASIS-2025-EXECUTION','BEIJING-COST-INFO-202608','BEIJING-COST-MARKET-REF-202608','BEIJING-URBAN-RENEWAL-GUIDE-202405'],
+    mapped_reference_lines:[
+      {line_id:'0129000003-2',scope:'Q235B hot-rolled steel plate, 2 mm',mapping_status:'reference_only_scope_review_required'},
+      {line_id:'0129000004-2',scope:'Q235B hot-rolled steel plate, 3 mm',mapping_status:'reference_only_scope_review_required'},
+      {line_id:'2811000601',scope:'0.6/1kV power cable YJV 3x4+1x2.5',mapping_status:'reference_only_scope_review_required'},
+      {line_id:'3601001201',scope:'1000x1000x80 permeable tree pit',mapping_status:'reference_only_scope_review_required'}
+    ],
+    formal_estimate_cny:null,
+    verified_quote_count:0,
+    unmapped_items_rule:'pending_market_quote'
+  };
+  ready.cost_classes = [
+    {id:'C1',scope:'survey_design_professional_coordination',rate_status:'pending_scope_matched_basis'},
+    {id:'C2',scope:'public_route_and_accessibility',rate_status:'pending_scope_matched_basis'},
+    {id:'C3',scope:'blue_green_shade_furniture_lighting',rate_status:'pending_scope_matched_basis'},
+    {id:'C4',scope:'staffed_evidence_porch',rate_status:'pending_scope_matched_basis'},
+    {id:'C5',scope:'safety_trial_boundary_and_interfaces',rate_status:'pending_scope_matched_basis'},
+    {id:'C6',scope:'first_year_operation_maintenance_insurance_readiness',rate_status:'pending_operator_and_quote'},
+    {id:'C7',scope:'restoration_reserve',rate_status:'formula_documented_quote_pending'}
+  ];
+  ready.rom_scenarios = {
+    direct_works_formula:'sum(design_quantity * documented_scope_matched_rate)',
+    survey_design_allowance_rate:0.10,
+    installation_logistics_allowance_rate:0.15,
+    uncertainty_allowance_rate:0.20,
+    scenarios:[
+      {id:'ROM-LOW',rate_input_multiplier:0.8,total_cny:null,status:'pending_complete_rate_inputs'},
+      {id:'ROM-BASE',rate_input_multiplier:1.0,total_cny:null,status:'pending_complete_rate_inputs'},
+      {id:'ROM-HIGH',rate_input_multiplier:1.2,total_cny:null,status:'pending_complete_rate_inputs'}
+    ]
+  };
+  ready.restoration_reserve = {
+    rate:0.12,
+    basis:'removable_works_subtotal',
+    held_outside_base_rom:true,
+    amount_cny:null,
+    status:'formula_documented_quote_pending'
+  };
+  const deps = [
+    ['K01','official_geometry_confirmation',[], 'G0'],
+    ['K02','survey_and_title_verification',['K01'],'G1'],
+    ['K03','operator_and_role_appointments',['K02'],'G1'],
+    ['K04','fire_access_traffic_utility_coordination',['K02'],'G2'],
+    ['K05','cost_plan_and_budget_authority',['K02','K04'],'G2'],
+    ['K06','procurement_and_specification_freeze',['K03','K05'],'G3'],
+    ['K07','off_site_fabrication',['K06'],'G3'],
+    ['K08','public_baseline_assembly',['K04','K07'],'G4'],
+    ['K09','seven_day_ordinary_baseline',['K03','K08'],'G4'],
+    ['K10','controlled_trial_recovery_and_civic_decision',['K09'],'G5']
+  ];
+  ready.critical_dependencies = deps.map(([id,action,depends_on,gate])=>({id,action,depends_on,exit_gate:gate,status:'not_started',evidence_output:`${id}_receipt`,failure_fallback:'remain_or_return_to_ordinary_open_state'}));
+  ready.acceptance_register = [
+    ['ACC-D01','public_route_connected_in_all_four_states','design_time_judgeable','pass'],
+    ['ACC-D02','public_route_outside_trial_boundary','design_time_judgeable','pass'],
+    ['ACC-D03','fire_route_independent','design_time_judgeable','pass'],
+    ['ACC-D04','removal_route_independent','design_time_judgeable','pass'],
+    ['ACC-D05','dual_estops_reachable_from_safety_post','design_time_judgeable','pass'],
+    ['ACC-D06','sixteen_quantity_formulas_resolve','design_time_judgeable','pass'],
+    ['ACC-D07','four_accountable_roles_not_conflated','design_time_judgeable','pass'],
+    ['ACC-D08','all_eight_permits_mandatory_before_trial','design_time_judgeable','pass'],
+    ['ACC-F01','ordinary_task_completion','field_dependent',null],
+    ['ACC-F02','accessibility_non_regression','field_dependent',null],
+    ['ACC-F03','safety_near_miss_and_human_intervention','field_dependent',null],
+    ['ACC-F04','recovery_duration','field_dependent',null]
+  ].map(([id,indicator,evidence_tier,result])=>({id,indicator,evidence_tier,result,field_status:evidence_tier==='field_dependent'?'not_field_run':'geometry_or_contract_checked'}));
+  ready.maintenance_cycles = [
+    {id:'MC-DAY',interval:'each_open_day',scope:'route_accessibility_state_board_and_staff_check'},
+    {id:'MC-TRIAL',interval:'before_and_after_each_trial',scope:'boundary_estop_equipment_log_and_takeover_check'},
+    {id:'MC-MONTH',interval:'monthly',scope:'dry_connections_paving_drainage_lighting_and_inventory'},
+    {id:'MC-YEAR',interval:'annual',scope:'public_evidence_assets_insurance_and_retirement_review'}
+  ];
+  ready.alternative_delivery_comparison = [
+    {alternative_id:'ALT-A',decision:'reject_design',delivery_note:'shorter perimeter and cable runs do not offset public-route failure'},
+    {alternative_id:'ALT-B',decision:'revise_design',delivery_note:'phasing possible but perimeter, supervision, fire and removal complexity increase'},
+    {alternative_id:'ALT-C',decision:'advance_design',delivery_note:'public continuity and consolidated service/maintenance; cost remains quote-dependent'}
+  ];
+  ready.external_evidence_status = {
+    verified_quote_count:0,
+    named_operator_count:0,
+    professional_signoff_count:0,
+    external_release_count:0,
+    authorised_site_action_count:0,
+    field_result_count:0,
+    overall_status:'HOLD'
+  };
+  Object.assign(ready.readiness_gate,{
+    gate_id:'G0-S7-PREFEASIBILITY',
+    decision:'participant_prefeasibility_documented_external_holds',
+    next_decision:'external_evidence_required_before_trial'
+  });
+  writeJson('visual/assets/e2-readiness.json', ready);
+}
+
 function updateMetrics() {
   const data = readJson('metrics.json');
   data.metrics.s7_public_route_prototype_width_m = {status:'known',value:4,unit:'m',source_files:['visual/assets/prototype-model.json'],formula:'min(s7.public_routes[].clear_width_m)',confidence:'medium',assumptions:['A-S7-PROTOTYPE-DIMENSIONS']};
   data.metrics.s7_public_route_state_invariant_count = {status:'known',value:4,unit:'states',source_files:['visual/assets/prototype-model.json'],formula:'count(OPEN,TRIAL,PAUSE,RETIRE preserving public_route_invariant)',confidence:'medium',assumptions:['A-S7-PROTOTYPE-DIMENSIONS']};
+  const known = (value,unit,formula)=>({status:'known',value,unit,source_files:['visual/assets/e2-readiness.json'],formula,confidence:'high',assumptions:['ASM-V17-3-PREFEASIBILITY']});
+  Object.assign(data.metrics,{
+    s7_design_occupancy_cap_person:known(12,'persons','48 sqm evidence porch / 4 sqm per person comfort assumption'),
+    s7_staffing_fte_equivalent:known(2.28,'fte_equivalent','sum(weekly_hours / 40 * 1.2 relief factor)'),
+    s7_cost_class_count:known(7,'count','count(cost_classes)'),
+    s7_rom_sensitivity_scenario_count:known(3,'count','count(rom_scenarios.scenarios)'),
+    s7_critical_dependency_count:known(10,'count','count(critical_dependencies)'),
+    s7_acceptance_indicator_count:known(12,'count','count(acceptance_register)'),
+    s7_immediately_judgeable_acceptance_count:known(8,'count','count(acceptance_register where evidence_tier=design_time_judgeable)'),
+    s7_field_dependent_acceptance_count:known(4,'count','count(acceptance_register where evidence_tier=field_dependent)'),
+    s7_maintenance_cycle_count:known(4,'count','count(maintenance_cycles)'),
+    s7_restoration_reserve_template_count:known(1,'count','count(restoration_reserve where rate and basis documented)'),
+    verified_quote_count:known(0,'count','external_evidence_status.verified_quote_count'),
+    named_operator_count:known(0,'count','external_evidence_status.named_operator_count'),
+    professional_signoff_count:known(0,'count','external_evidence_status.professional_signoff_count'),
+    external_release_count:known(0,'count','external_evidence_status.external_release_count'),
+    authorised_site_action_count:known(0,'count','external_evidence_status.authorised_site_action_count')
+  });
   writeJson('metrics.json', data);
 }
 
 function updateSourcesAndRights() {
   const data = readJson('sources.json');
   const records = [
+    {
+      id:'BEIJING-COST-BASIS-2025-EXECUTION',publisher:'北京市住房和城乡建设委员会',date:'2026-04-30',retrieved_at:'2026-09-01',source_type:'official_public',license:'Public information; quotation subject to publisher terms',
+      url:'https://zjw.beijing.gov.cn/bjjs/xxgk/zcwj2024/gfxwj40/xxyx/744000295/index.shtml',usage:'Method basis for participant-side ROM structure; the 2025 Beijing estimate consumption standard applies from 2026-05-01.',limitations:'Not a project estimate, tender price, quote, budget approval or scope-matched professional cost review.'
+    },
+    {
+      id:'BEIJING-COST-INFO-202608',publisher:'北京市住房和城乡建设委员会',date:'2026-08-24',retrieved_at:'2026-09-01',source_type:'official_public',license:'Public information; quotation subject to publisher terms',
+      url:'https://zjw.beijing.gov.cn/bjjs/resource/cms/article/743943530/744102032/2026082409431522927.pdf',upstream_sha256:'C309CFD4187C1E15E382BA90BC42E2B18359427F34CCC780789F221048B030F1',usage:'Reference month and line identifiers for participant-side cost sensitivity; only scope-matched lines may be used.',limitations:'No formal quantity survey or scope-matched rate review has been commissioned; totals remain null.'
+    },
+    {
+      id:'BEIJING-COST-MARKET-REF-202608',publisher:'北京市住房和城乡建设委员会',date:'2026-08-24',retrieved_at:'2026-09-01',source_type:'official_public',license:'Public information; quotation subject to publisher terms',
+      url:'https://zjw.beijing.gov.cn/bjjs/resource/cms/article/743943533/744102037/2026082409443233577.pdf',upstream_sha256:'6FE9EE5009D040E14A7C26C974E056A2D3BAEBE720DF231B803CB3A7C0229D36',usage:'Market-reference cross-check for selected material line identifiers.',limitations:'Reference only; not a supplier quote, procurement commitment or complete project price basis.'
+    },
+    {
+      id:'BEIJING-URBAN-RENEWAL-GUIDE-202405',publisher:'北京市住房和城乡建设委员会',date:'2024-05-23',retrieved_at:'2026-09-01',source_type:'official_public',license:'Public information; quotation subject to publisher terms',
+      url:'https://www.beijing.gov.cn/zhengce/gfxwj/sj/202405/t20240527_3694615.html',usage:'Implementation-plan structure for scope, responsibility, funding, operation and risk evidence.',limitations:'General procedural guidance only; it does not approve this proposal or establish the applicable project route.'
+    },
     {
       id:'GENERATED-RECEIPT-PORCH-V17-DAY', publisher:'OpenAI built-in image generation', date:'2026-08-21', source_type:'ai_generated_visual',
       license:'Competition display only; subject to platform and competition terms', path:'assets/media/receipt-porch-v17-day.webp', companion_path:'assets/media/receipt-porch-v17-day.jpg',
@@ -200,16 +401,34 @@ function updateChangelog() {
     text += `\n## 2026-08-30 · V17.2\n\n- Rebalanced the five review figures around one dominant spatial judgment and enlarged essential labels for 1024 px review.\n- Reflowed A0 and A3 without adding design claims, data, scenes or metrics.\n- Replaced the duplicated report hero and expanded the interaction assembly/state panel.\n- Enforced zero visible CJK characters across English figures, PDFs and offline HTML while retaining the licensed embedded font.\n`;
     writeText(rel, text);
   }
+  if (!text.includes('## 2026-09-01 · V17.3')) {
+    text += `\n## 2026-09-01 · V17.3\n\n- Added an S7 participant-side pre-feasibility decision package: capacity, staffing/FTE, seven cost classes, three ROM sensitivities, ten dependencies, twelve acceptance indicators, maintenance cycles and restoration reserve.\n- Kept survey, permits, verified quotes, named operator, professional sign-off, site authorisation and field results at zero/HOLD.\n- Registered current Beijing cost-basis and urban-renewal implementation sources without presenting a formal estimate or quote.\n- Concentrated publication changes on the implementation evidence entry while preserving the recognised spatial mechanism.\n`;
+    writeText(rel, text);
+  }
+}
+
+function updateAssumptions() {
+  const data = readJson('assumptions.json');
+  const record = {
+    id:'ASM-V17-3-PREFEASIBILITY',
+    status:'participant_design_assumption',
+    statement:{zh:'12人容量、2.28 FTE、ROM比例、关键依赖和验收拆分是参与者侧预可行性假设，不是批准容量、人员承诺、正式概算或现场结果。',en:'The 12-person cap, 2.28 FTE, ROM allowances, critical path and acceptance split are participant-side pre-feasibility assumptions, not approved capacity, staffing commitments, a formal estimate or field results.'},
+    impact:{zh:'完成测绘、运营主体确认、专业复核和正式询价后必须重算并由相应责任方签署。',en:'They must be recalculated and signed by accountable parties after survey, operator confirmation, professional review and formal quotations.'}
+  };
+  const at=data.assumptions.findIndex(x=>x.id===record.id);if(at>=0)data.assumptions[at]=record;else data.assumptions.push(record);
+  writeJson('assumptions.json',data);
 }
 
 function run() {
   rebuildProposal('proposal.md','zh');
   rebuildProposal('proposal.en.md','en');
   updateStructuredData();
+  updateReadiness();
   updateMetrics();
   updateSourcesAndRights();
+  updateAssumptions();
   updateChangelog();
-  console.log('V17.2 canonical content and schema 1.14.0 written');
+  console.log('V17.3 canonical content and schema 1.15.0 written');
 }
 
 module.exports = {run};

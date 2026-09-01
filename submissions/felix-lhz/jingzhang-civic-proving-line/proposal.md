@@ -33,9 +33,21 @@ ALT-C 的概念公共路线、单侧试验范围和可逆缓冲均由同一局�
 
 岗位—急停距离沿用同一输入；正式底图、站口、权属或专业条件变化时必须重算，图纸和文字服从结果。[metric:alt_c_max_estop_staff_distance_m]
 
-## 当前实施门：G0 进入测绘与许可准备
+## 当前实施门：G0 参与者预可行性已记录，外部条件保持 HOLD
 
-当前不是“不可实施”，而是诚实位于 **G0：进入测绘与许可准备**。下一道门要求完成现场测绘、权属和轨道接口核验，关闭场地/消防/无障碍/临电/网络/交通组织/设备安全等许可依赖，落实场地负责人、普通服务、安全和数据记录四个独立岗位，再记录连续 7 个普通运行日。任一条件缺失，AI 试验不启动，但普通开放日仍可独立筹备。[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
+当前不是“不可实施”，而是诚实位于 **G0：参与者侧预可行性已记录，外部条件保持 HOLD**。下一道门仍要求完成现场测绘、权属和轨道接口核验，关闭场地/消防/无障碍/临电/网络/交通组织/设备安全等许可依赖，落实四个独立责任岗位，再记录连续 7 个普通运行日。任一条件缺失，AI 试验不启动，但普通开放日仍可独立筹备。[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
+
+### S7 预可行性裁定包
+
+参与者侧现可复核：48㎡回执廊按 4㎡/人舒适容量假设形成 **12 人同时使用设计上限**；普通服务、场地、安全与数据岗位合计 **2.28 FTE-equivalent**；成本分为 7 类。[metric:s7_design_occupancy_cap_person] [metric:s7_staffing_fte_equivalent] [metric:s7_cost_class_count]
+
+成本另设低/基准/高 3 种费率敏感性，但正式总价保持空值；10 项关键依赖必须顺序闭合。[metric:s7_rom_sensitivity_scenario_count] [metric:s7_critical_dependency_count]
+
+十二项验收中，8 项可由当前几何、数量和责任接口判断，4 项必须通过现场普通基线与试验取得。[metric:s7_acceptance_indicator_count] [metric:s7_immediately_judgeable_acceptance_count] [metric:s7_field_dependent_acceptance_count]
+
+当前许可、报价、具名运营主体、专业签章和现场授权全部为 0；这组数字是诚实的外部 HOLD，不是方案空白。[metric:verified_quote_count] [metric:named_operator_count]
+
+ROM 方法引用北京市 2025 年建设工程计价依据执行规定、2026 年 8 月造价信息及城市更新实施方案指南。所有数量仍是投稿原型假设；无法映射到同口径官方信息的设备保持 pending_market_quote，不推定采购价。[source:BEIJING-COST-BASIS-2025-EXECUTION] [source:BEIJING-COST-INFO-202608] [source:BEIJING-URBAN-RENEWAL-GUIDE-202405]
 
 现场客流、安全、效率、满意度、能耗、价格和恢复时长继续为 unknown / not_field_run。12 份测量契约说明“如何验证”，不冒充验证结果。[metric:measurement_contract_count] [metric:field_verification_result_count]
 

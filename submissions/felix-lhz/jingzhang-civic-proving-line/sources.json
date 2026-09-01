@@ -513,6 +513,52 @@
       "companion_path": "visual/assets/font-license.json",
       "usage": "A glyph-subset variable WOFF2 is renamed JZ Civic CJK and embedded in all four offline HTML deliverables so Chinese and residual bilingual text render without system fonts or network access.",
       "limitations": "This is a derived font subset, not planning or field evidence. Upstream version, hashes, glyph inputs and derivation method are recorded in visual/assets/font-metadata.json."
+    },
+    {
+      "id": "BEIJING-COST-BASIS-2025-EXECUTION",
+      "publisher": "北京市住房和城乡建设委员会",
+      "date": "2026-04-30",
+      "retrieved_at": "2026-09-01",
+      "source_type": "official_public",
+      "license": "Public information; quotation subject to publisher terms",
+      "url": "https://zjw.beijing.gov.cn/bjjs/xxgk/zcwj2024/gfxwj40/xxyx/744000295/index.shtml",
+      "usage": "Method basis for participant-side ROM structure; the 2025 Beijing estimate consumption standard applies from 2026-05-01.",
+      "limitations": "Not a project estimate, tender price, quote, budget approval or scope-matched professional cost review."
+    },
+    {
+      "id": "BEIJING-COST-INFO-202608",
+      "publisher": "北京市住房和城乡建设委员会",
+      "date": "2026-08-24",
+      "retrieved_at": "2026-09-01",
+      "source_type": "official_public",
+      "license": "Public information; quotation subject to publisher terms",
+      "url": "https://zjw.beijing.gov.cn/bjjs/resource/cms/article/743943530/744102032/2026082409431522927.pdf",
+      "upstream_sha256": "C309CFD4187C1E15E382BA90BC42E2B18359427F34CCC780789F221048B030F1",
+      "usage": "Reference month and line identifiers for participant-side cost sensitivity; only scope-matched lines may be used.",
+      "limitations": "No formal quantity survey or scope-matched rate review has been commissioned; totals remain null."
+    },
+    {
+      "id": "BEIJING-COST-MARKET-REF-202608",
+      "publisher": "北京市住房和城乡建设委员会",
+      "date": "2026-08-24",
+      "retrieved_at": "2026-09-01",
+      "source_type": "official_public",
+      "license": "Public information; quotation subject to publisher terms",
+      "url": "https://zjw.beijing.gov.cn/bjjs/resource/cms/article/743943533/744102037/2026082409443233577.pdf",
+      "upstream_sha256": "6FE9EE5009D040E14A7C26C974E056A2D3BAEBE720DF231B803CB3A7C0229D36",
+      "usage": "Market-reference cross-check for selected material line identifiers.",
+      "limitations": "Reference only; not a supplier quote, procurement commitment or complete project price basis."
+    },
+    {
+      "id": "BEIJING-URBAN-RENEWAL-GUIDE-202405",
+      "publisher": "北京市住房和城乡建设委员会",
+      "date": "2024-05-23",
+      "retrieved_at": "2026-09-01",
+      "source_type": "official_public",
+      "license": "Public information; quotation subject to publisher terms",
+      "url": "https://www.beijing.gov.cn/zhengce/gfxwj/sj/202405/t20240527_3694615.html",
+      "usage": "Implementation-plan structure for scope, responsibility, funding, operation and risk evidence.",
+      "limitations": "General procedural guidance only; it does not approve this proposal or establish the applicable project route."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.14.0",
+  "schema_version": "1.15.0",
   "dataset_id": "jingzhang-two-answers",
   "title": {
     "zh": "京张双答：三站一历",
@@ -5478,7 +5478,7 @@
       ],
       "architectural_prototype_ref": "LMK-03",
       "visual_priority": "hero",
-      "implementation_stage": "G0_survey_and_permit_preparation",
+      "implementation_stage": "G0_participant_prefeasibility_documented_external_holds",
       "next_gate_requirements": [
         "survey_complete",
         "title_and_interface_verified",
@@ -6536,7 +6536,7 @@
     "en": "One public route, four civic states"
   },
   "field_status": "not_field_run",
-  "publication_version": "V17.2",
+  "publication_version": "V17.3",
   "evidence_ladder": [
     {
       "id": "E0",
@@ -7602,7 +7602,7 @@
   ],
   "experience_camera_ref": "CAM-S7-NW-01",
   "visual_priority": "hero",
-  "implementation_stage": "G0_survey_and_permit_preparation",
+  "implementation_stage": "G0_participant_prefeasibility_documented_external_holds",
   "next_gate_requirements": [
     "survey_complete",
     "title_and_interface_verified",

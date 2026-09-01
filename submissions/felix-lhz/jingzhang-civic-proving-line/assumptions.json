@@ -97,6 +97,18 @@
       "status": "pending_official_data",
       "statement": "All three alternatives use the same provisional Dazhongsi context and do not assert official ownership, redlines or station entrances.",
       "impact": "A change in the verified context may change the reject, revise or advance result."
+    },
+    {
+      "id": "ASM-V17-3-PREFEASIBILITY",
+      "status": "participant_design_assumption",
+      "statement": {
+        "zh": "12人容量、2.28 FTE、ROM比例、关键依赖和验收拆分是参与者侧预可行性假设，不是批准容量、人员承诺、正式概算或现场结果。",
+        "en": "The 12-person cap, 2.28 FTE, ROM allowances, critical path and acceptance split are participant-side pre-feasibility assumptions, not approved capacity, staffing commitments, a formal estimate or field results."
+      },
+      "impact": {
+        "zh": "完成测绘、运营主体确认、专业复核和正式询价后必须重算并由相应责任方签署。",
+        "en": "They must be recalculated and signed by accountable parties after survey, operator confirmation, professional review and formal quotations."
+      }
     }
   ]
 }

@@ -33,9 +33,21 @@ ALT-C route, one-sided trial area and reversible buffer come from one local-metr
 
 Staff-to-e-stop distance uses the same input. Any change in official base, entrances, title or specialist constraints requires a rerun; drawings and text must follow the result.[metric:alt_c_max_estop_staff_distance_m]
 
-## Current implementation gate: G0 survey and permit preparation
+## Current implementation gate: participant pre-feasibility documented; external conditions on HOLD
 
-The scheme is not labelled “unimplementable”; it is honestly at **G0: enter survey and permit preparation**. The next gate requires site survey, title and rail-interface checks; closure of site, fire, accessibility, temporary power, network, traffic and equipment-safety dependencies; four independent venue, baseline-service, safety and data posts; then seven consecutive ordinary operating days. If any condition is missing, AI trial does not start, while an ordinary open day can still be prepared.[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
+The scheme is not labelled “unimplementable”; it is honestly at **G0: participant-side pre-feasibility documented, external conditions on HOLD**. The next gate still requires site survey, title and rail-interface checks; closure of site, fire, accessibility, temporary power, network, traffic and equipment-safety dependencies; four independent accountable posts; then seven consecutive ordinary operating days. If any condition is missing, AI trial does not start, while an ordinary open day can still be prepared.[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
+
+### S7 pre-feasibility decision package
+
+Participant-side decisions are now reviewable: the 48 sqm Receipt Porch uses a 4 sqm/person comfort assumption to set a **12-person concurrent design cap**; baseline service, venue, safety and data coverage total **2.28 FTE-equivalent**; cost planning uses seven classes.[metric:s7_design_occupancy_cap_person] [metric:s7_staffing_fte_equivalent] [metric:s7_cost_class_count]
+
+Low/base/high rate sensitivities are defined while formal totals remain blank; ten critical dependencies must close in order.[metric:s7_rom_sensitivity_scenario_count] [metric:s7_critical_dependency_count]
+
+Of twelve acceptance indicators, eight are judgeable from present geometry, quantities and responsibility interfaces, while four require a field baseline and trial.[metric:s7_acceptance_indicator_count] [metric:s7_immediately_judgeable_acceptance_count] [metric:s7_field_dependent_acceptance_count]
+
+Permits, verified quotes, a named operator, professional sign-off and authorised site action remain zero. These are explicit external HOLDs, not concealed gaps.[metric:verified_quote_count] [metric:named_operator_count]
+
+The ROM method references Beijing's rule for the 2025 construction cost basis, August 2026 cost information and the urban-renewal implementation-plan guide. All quantities remain participant prototype assumptions; equipment without a scope-matched official line stays pending_market_quote.[source:BEIJING-COST-BASIS-2025-EXECUTION] [source:BEIJING-COST-INFO-202608] [source:BEIJING-URBAN-RENEWAL-GUIDE-202405]
 
 Field footfall, safety, efficiency, satisfaction, energy, price and recovery duration remain unknown / not_field_run. Twelve measurement contracts define how to verify; they are not results.[metric:measurement_contract_count] [metric:field_verification_result_count]
 

@@ -1,15 +1,15 @@
 {
-  "schema_version": "1.12.0",
-  "dataset_id": "jingzhang-v15-buildable-civic-cross-g0",
+  "schema_version": "1.15.0",
+  "dataset_id": "jingzhang-v17-3-s7-participant-prefeasibility",
   "title": {
-    "zh": "V15 可建造公共十字 G0 准入门",
-    "en": "V15 Buildable Civic Cross G0 Gate"
+    "zh": "V17.3 S7 预可行性裁定包",
+    "en": "V17.3 S7 Pre-feasibility Decision Package"
   },
   "definition": {
-    "zh": "设计原型和准备表单已经形成，但测绘、权属、八类许可、独立岗位和普通服务基线未完成；当前结论为NO-GO。",
-    "en": "The design prototype and preparation forms exist, but survey, title, eight permits, independent posts and the ordinary-service baseline are incomplete; the current decision is NO-GO."
+    "zh": "参与者侧容量、人员、成本结构、依赖、验收与恢复方法已记录；测绘、许可、报价、运营任命、专业签章、现场授权和绩效仍为外部HOLD。",
+    "en": "Participant-side capacity, staffing, cost structure, dependencies, acceptance and recovery methods are documented; survey, permits, quotes, operator appointment, professional sign-off, site authorisation and performance remain external HOLDs."
   },
-  "prototype_readiness": "design_documented_trial_not_admitted",
+  "prototype_readiness": "G0_participant_prefeasibility_documented_external_holds",
   "field_status": "not_field_run",
   "permitted_states": [
     "ready_documented",
@@ -527,14 +527,428 @@
     "field_status": "not_field_run"
   },
   "readiness_gate": {
-    "gate_id": "G0-S7-PRETRIAL",
-    "decision": "no_go",
+    "gate_id": "G0-S7-PREFEASIBILITY",
+    "decision": "participant_prefeasibility_documented_external_holds",
     "closed_permit_count": 0,
     "required_permit_count": 8,
     "recorded_baseline_days": 0,
     "required_baseline_days": 7,
     "contracted_independent_role_count": 0,
     "required_independent_role_count": 4,
-    "next_decision": "repeat_gate_after_survey_permits_roles_and_baseline"
+    "next_decision": "external_evidence_required_before_trial"
+  },
+  "capacity_egress_envelope": {
+    "status": "participant_design_assumption_pending_survey_and_professional_review",
+    "evidence_porch_area_sqm": 48,
+    "comfort_area_per_person_sqm": 4,
+    "concurrent_design_cap_person": 12,
+    "formula": "48 sqm / 4 sqm_per_person = 12 persons",
+    "public_routes_excluded_from_occupancy": true,
+    "public_route_clear_width_m": 4,
+    "trial_bay_public_occupancy_allowed": false,
+    "open_porch_dimensions_m": {
+      "width": 8,
+      "depth": 6
+    },
+    "max_geometry_distance_to_open_edge_m": 5,
+    "distance_formula": "sqrt(8^2 + 6^2) / 2 = 5 m",
+    "statutory_egress_conclusion": false,
+    "dependencies": [
+      "official_survey",
+      "fire_review",
+      "accessibility_review",
+      "operator_review"
+    ]
+  },
+  "staffing_scenarios": [
+    {
+      "role": "baseline_service_post",
+      "weekly_hours": 40,
+      "relief_factor": 1.2,
+      "fte_equivalent": 1.2,
+      "appointment_status": "unappointed"
+    },
+    {
+      "role": "venue_lead",
+      "weekly_hours": 12,
+      "relief_factor": 1.2,
+      "fte_equivalent": 0.36,
+      "appointment_status": "unappointed"
+    },
+    {
+      "role": "safety_lead",
+      "weekly_hours": 12,
+      "relief_factor": 1.2,
+      "fte_equivalent": 0.36,
+      "appointment_status": "unappointed"
+    },
+    {
+      "role": "data_recorder",
+      "weekly_hours": 12,
+      "relief_factor": 1.2,
+      "fte_equivalent": 0.36,
+      "appointment_status": "unappointed"
+    }
+  ],
+  "fte_formula": {
+    "standard_weekly_hours": 40,
+    "formula": "weekly_hours / 40 * relief_factor",
+    "participant_side_total_fte_equivalent": 2.28,
+    "vendor_technician_substitution_allowed": false,
+    "status": "participant_staffing_scenario_not_appointment_or_hiring_commitment"
+  },
+  "cost_basis": {
+    "currency": "CNY",
+    "price_basis_month": "2026-08",
+    "method_status": "participant_rom_assumption_not_formal_estimate_or_quote",
+    "sources": [
+      "BEIJING-COST-BASIS-2025-EXECUTION",
+      "BEIJING-COST-INFO-202608",
+      "BEIJING-COST-MARKET-REF-202608",
+      "BEIJING-URBAN-RENEWAL-GUIDE-202405"
+    ],
+    "mapped_reference_lines": [
+      {
+        "line_id": "0129000003-2",
+        "scope": "Q235B hot-rolled steel plate, 2 mm",
+        "mapping_status": "reference_only_scope_review_required"
+      },
+      {
+        "line_id": "0129000004-2",
+        "scope": "Q235B hot-rolled steel plate, 3 mm",
+        "mapping_status": "reference_only_scope_review_required"
+      },
+      {
+        "line_id": "2811000601",
+        "scope": "0.6/1kV power cable YJV 3x4+1x2.5",
+        "mapping_status": "reference_only_scope_review_required"
+      },
+      {
+        "line_id": "3601001201",
+        "scope": "1000x1000x80 permeable tree pit",
+        "mapping_status": "reference_only_scope_review_required"
+      }
+    ],
+    "formal_estimate_cny": null,
+    "verified_quote_count": 0,
+    "unmapped_items_rule": "pending_market_quote"
+  },
+  "cost_classes": [
+    {
+      "id": "C1",
+      "scope": "survey_design_professional_coordination",
+      "rate_status": "pending_scope_matched_basis"
+    },
+    {
+      "id": "C2",
+      "scope": "public_route_and_accessibility",
+      "rate_status": "pending_scope_matched_basis"
+    },
+    {
+      "id": "C3",
+      "scope": "blue_green_shade_furniture_lighting",
+      "rate_status": "pending_scope_matched_basis"
+    },
+    {
+      "id": "C4",
+      "scope": "staffed_evidence_porch",
+      "rate_status": "pending_scope_matched_basis"
+    },
+    {
+      "id": "C5",
+      "scope": "safety_trial_boundary_and_interfaces",
+      "rate_status": "pending_scope_matched_basis"
+    },
+    {
+      "id": "C6",
+      "scope": "first_year_operation_maintenance_insurance_readiness",
+      "rate_status": "pending_operator_and_quote"
+    },
+    {
+      "id": "C7",
+      "scope": "restoration_reserve",
+      "rate_status": "formula_documented_quote_pending"
+    }
+  ],
+  "rom_scenarios": {
+    "direct_works_formula": "sum(design_quantity * documented_scope_matched_rate)",
+    "survey_design_allowance_rate": 0.1,
+    "installation_logistics_allowance_rate": 0.15,
+    "uncertainty_allowance_rate": 0.2,
+    "scenarios": [
+      {
+        "id": "ROM-LOW",
+        "rate_input_multiplier": 0.8,
+        "total_cny": null,
+        "status": "pending_complete_rate_inputs"
+      },
+      {
+        "id": "ROM-BASE",
+        "rate_input_multiplier": 1,
+        "total_cny": null,
+        "status": "pending_complete_rate_inputs"
+      },
+      {
+        "id": "ROM-HIGH",
+        "rate_input_multiplier": 1.2,
+        "total_cny": null,
+        "status": "pending_complete_rate_inputs"
+      }
+    ]
+  },
+  "restoration_reserve": {
+    "rate": 0.12,
+    "basis": "removable_works_subtotal",
+    "held_outside_base_rom": true,
+    "amount_cny": null,
+    "status": "formula_documented_quote_pending"
+  },
+  "critical_dependencies": [
+    {
+      "id": "K01",
+      "action": "official_geometry_confirmation",
+      "depends_on": [],
+      "exit_gate": "G0",
+      "status": "not_started",
+      "evidence_output": "K01_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K02",
+      "action": "survey_and_title_verification",
+      "depends_on": [
+        "K01"
+      ],
+      "exit_gate": "G1",
+      "status": "not_started",
+      "evidence_output": "K02_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K03",
+      "action": "operator_and_role_appointments",
+      "depends_on": [
+        "K02"
+      ],
+      "exit_gate": "G1",
+      "status": "not_started",
+      "evidence_output": "K03_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K04",
+      "action": "fire_access_traffic_utility_coordination",
+      "depends_on": [
+        "K02"
+      ],
+      "exit_gate": "G2",
+      "status": "not_started",
+      "evidence_output": "K04_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K05",
+      "action": "cost_plan_and_budget_authority",
+      "depends_on": [
+        "K02",
+        "K04"
+      ],
+      "exit_gate": "G2",
+      "status": "not_started",
+      "evidence_output": "K05_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K06",
+      "action": "procurement_and_specification_freeze",
+      "depends_on": [
+        "K03",
+        "K05"
+      ],
+      "exit_gate": "G3",
+      "status": "not_started",
+      "evidence_output": "K06_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K07",
+      "action": "off_site_fabrication",
+      "depends_on": [
+        "K06"
+      ],
+      "exit_gate": "G3",
+      "status": "not_started",
+      "evidence_output": "K07_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K08",
+      "action": "public_baseline_assembly",
+      "depends_on": [
+        "K04",
+        "K07"
+      ],
+      "exit_gate": "G4",
+      "status": "not_started",
+      "evidence_output": "K08_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K09",
+      "action": "seven_day_ordinary_baseline",
+      "depends_on": [
+        "K03",
+        "K08"
+      ],
+      "exit_gate": "G4",
+      "status": "not_started",
+      "evidence_output": "K09_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    },
+    {
+      "id": "K10",
+      "action": "controlled_trial_recovery_and_civic_decision",
+      "depends_on": [
+        "K09"
+      ],
+      "exit_gate": "G5",
+      "status": "not_started",
+      "evidence_output": "K10_receipt",
+      "failure_fallback": "remain_or_return_to_ordinary_open_state"
+    }
+  ],
+  "acceptance_register": [
+    {
+      "id": "ACC-D01",
+      "indicator": "public_route_connected_in_all_four_states",
+      "evidence_tier": "design_time_judgeable",
+      "result": "pass",
+      "field_status": "geometry_or_contract_checked"
+    },
+    {
+      "id": "ACC-D02",
+      "indicator": "public_route_outside_trial_boundary",
+      "evidence_tier": "design_time_judgeable",
+      "result": "pass",
+      "field_status": "geometry_or_contract_checked"
+    },
+    {
+      "id": "ACC-D03",
+      "indicator": "fire_route_independent",
+      "evidence_tier": "design_time_judgeable",
+      "result": "pass",
+      "field_status": "geometry_or_contract_checked"
+    },
+    {
+      "id": "ACC-D04",
+      "indicator": "removal_route_independent",
+      "evidence_tier": "design_time_judgeable",
+      "result": "pass",
+      "field_status": "geometry_or_contract_checked"
+    },
+    {
+      "id": "ACC-D05",
+      "indicator": "dual_estops_reachable_from_safety_post",
+      "evidence_tier": "design_time_judgeable",
+      "result": "pass",
+      "field_status": "geometry_or_contract_checked"
+    },
+    {
+      "id": "ACC-D06",
+      "indicator": "sixteen_quantity_formulas_resolve",
+      "evidence_tier": "design_time_judgeable",
+      "result": "pass",
+      "field_status": "geometry_or_contract_checked"
+    },
+    {
+      "id": "ACC-D07",
+      "indicator": "four_accountable_roles_not_conflated",
+      "evidence_tier": "design_time_judgeable",
+      "result": "pass",
+      "field_status": "geometry_or_contract_checked"
+    },
+    {
+      "id": "ACC-D08",
+      "indicator": "all_eight_permits_mandatory_before_trial",
+      "evidence_tier": "design_time_judgeable",
+      "result": "pass",
+      "field_status": "geometry_or_contract_checked"
+    },
+    {
+      "id": "ACC-F01",
+      "indicator": "ordinary_task_completion",
+      "evidence_tier": "field_dependent",
+      "result": null,
+      "field_status": "not_field_run"
+    },
+    {
+      "id": "ACC-F02",
+      "indicator": "accessibility_non_regression",
+      "evidence_tier": "field_dependent",
+      "result": null,
+      "field_status": "not_field_run"
+    },
+    {
+      "id": "ACC-F03",
+      "indicator": "safety_near_miss_and_human_intervention",
+      "evidence_tier": "field_dependent",
+      "result": null,
+      "field_status": "not_field_run"
+    },
+    {
+      "id": "ACC-F04",
+      "indicator": "recovery_duration",
+      "evidence_tier": "field_dependent",
+      "result": null,
+      "field_status": "not_field_run"
+    }
+  ],
+  "maintenance_cycles": [
+    {
+      "id": "MC-DAY",
+      "interval": "each_open_day",
+      "scope": "route_accessibility_state_board_and_staff_check"
+    },
+    {
+      "id": "MC-TRIAL",
+      "interval": "before_and_after_each_trial",
+      "scope": "boundary_estop_equipment_log_and_takeover_check"
+    },
+    {
+      "id": "MC-MONTH",
+      "interval": "monthly",
+      "scope": "dry_connections_paving_drainage_lighting_and_inventory"
+    },
+    {
+      "id": "MC-YEAR",
+      "interval": "annual",
+      "scope": "public_evidence_assets_insurance_and_retirement_review"
+    }
+  ],
+  "alternative_delivery_comparison": [
+    {
+      "alternative_id": "ALT-A",
+      "decision": "reject_design",
+      "delivery_note": "shorter perimeter and cable runs do not offset public-route failure"
+    },
+    {
+      "alternative_id": "ALT-B",
+      "decision": "revise_design",
+      "delivery_note": "phasing possible but perimeter, supervision, fire and removal complexity increase"
+    },
+    {
+      "alternative_id": "ALT-C",
+      "decision": "advance_design",
+      "delivery_note": "public continuity and consolidated service/maintenance; cost remains quote-dependent"
+    }
+  ],
+  "external_evidence_status": {
+    "verified_quote_count": 0,
+    "named_operator_count": 0,
+    "professional_signoff_count": 0,
+    "external_release_count": 0,
+    "authorised_site_action_count": 0,
+    "field_result_count": 0,
+    "overall_status": "HOLD"
   }
 }

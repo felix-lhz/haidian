@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.14.0",
+  "schema_version": "1.15.0",
   "dataset_id": "jingzhang-two-answers-spatial-atlas",
   "status": "concept_proposal_under_provisional_boundaries",
   "view_box": [
@@ -3307,7 +3307,7 @@
     "zh": "仅为临时边界下的概念性空间布局；不得作为现状测绘、法定总平面、道路红线或审批依据。",
     "en": "Conceptual spatial layout under provisional boundaries; not a survey, statutory plan, road redline or approval basis."
   },
-  "publication_version": "V17.2",
+  "publication_version": "V17.3",
   "context_dataset": "context-open-map.json",
   "spine": {
     "id": "public_baseline_spine",
@@ -4254,7 +4254,7 @@
   ],
   "experience_camera_ref": "CAM-S7-NW-01",
   "visual_priority": "hero",
-  "implementation_stage": "G0_survey_and_permit_preparation",
+  "implementation_stage": "G0_participant_prefeasibility_documented_external_holds",
   "next_gate_requirements": [
     "survey_complete",
     "title_and_interface_verified",
